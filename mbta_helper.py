@@ -6,7 +6,16 @@ MBTA_BASE_URL = "https://api-v3.mbta.com/stops"
 MAPQUEST_API_KEY = "HcIYW7mvcsgmK8EmyT1yAFMhAFJbUAXG"
 MBTA_API_KEY = "b11548df087a42b9bad23d21a61347ad"
 
+import urllib.request
+import json
+from pprint import pprint
 
+url = f'http://www.mapquestapi.com/geocoding/v1/address?key={MAPQUEST_API_KEY}&location=Babson%20College'
+f = urllib.request.urlopen(url)
+response_text = f.read().decode('utf-8')
+response_data = json.loads(response_text)
+pprint(response_data)
+print(response_data["results"][0]["locations"][0]['postalCode'])
 
 # A little bit of scaffolding if you want to use it
 
@@ -15,7 +24,7 @@ def get_json(url):
     Given a properly formatted URL for a JSON web API request, return
     a Python JSON object containing the response to that request.
     """
-    pass
+
 
 
 def get_lat_long(place_name):
