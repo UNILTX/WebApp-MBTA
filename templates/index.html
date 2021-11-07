@@ -1,10 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Amazing app to help you find nearest MBTA station</title>
 </head>
-<body>
 
+<body>
+    <div>
+        <p>Hello! Please input the address and we'll help you find the nearest mbta station</p>
+    </div>
+    <div>
+        <form action="/nearest_mbta" method='POST'>
+            <label for="address">Address:</label><br>
+            <input type="text" name="address"><br>
+
+            <label for="vehicle">Vehicle</label><br>
+            <input type="checkbox" name="0">
+            <label for="0">Tram, Streetcar, Light rail.</label><br>
+
+            <input type="checkbox" name="1">
+            <label for="1">Subway, Metro.</label><br>
+
+            <input type="checkbox" name="2">
+            <label for="2">Rail.</label><br>
+
+            <input type="checkbox" name="3">
+            <label for="3">Bus.</label><br>
+
+            <input type="checkbox" name="4">
+            <label for="4">Ferry.</label><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
+
 </html>
